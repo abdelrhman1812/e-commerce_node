@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const hashPassword = ({ plaintext, salt = process.env.SALT_ROUND } = {}) => {
   const hashResult = bcrypt.hashSync(plaintext, parseInt(salt));

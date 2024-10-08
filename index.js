@@ -24,6 +24,7 @@ app.use(express.json());
 
 bootstrap(app);
 
+app.get("/", (req, res) => res.send("Abdelrhman"));
 /* Err Handel Routes */
 app.use("*", (req, res, next) => {
   next(new AppError(`route not found ${req.originalUrl}`, 404));
@@ -38,5 +39,4 @@ process.on("unhandledRejection", (err) => {
 });
 
 /* Listen */
-app.get("/", (req, res) => res.send("Abdelrhman"));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

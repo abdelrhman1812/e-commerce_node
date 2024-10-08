@@ -1,7 +1,6 @@
 import { Router } from "express";
 import catchError from "../../middleware/catchError.js";
 import protectedRoute from "../../middleware/protectedRoutes.js";
-import { validation } from "../../middleware/validation.js";
 
 import {
   addToWishlist,
@@ -9,7 +8,6 @@ import {
   deleteProductFromWishlist,
   getLoggedUserWishList,
 } from "./wishList.controller.js";
-import { addToWishListValidation } from "./wishlist.validation.js";
 
 const wishListRouter = Router();
 
@@ -18,7 +16,7 @@ const wishListRouter = Router();
 wishListRouter.post(
   "/",
   protectedRoute,
-  validation(addToWishListValidation),
+  // validation(addToWishListValidation),
   catchError(addToWishlist)
 );
 

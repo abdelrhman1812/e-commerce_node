@@ -249,7 +249,7 @@ const getProducts = async (req, res, next) => {
         select: "name email profile ",
       },
     })
-    .populate("category", "name")
+    .populate("category", "name slug")
     .populate("brand", "name");
   const page = apiFeatures.pageNumber;
   const totalProducts = await apiFeatures.mongooseQuery
@@ -265,33 +265,30 @@ const getProducts = async (req, res, next) => {
   });
 };
 
-/* =============== Get Products ===============  */
+/* =============== Get Product ===============  */
 
 const getProduct = async (req, res, next) => {
   const productId = req.params.id;
-  try {
-    const product = await ProductModel.findById(productId)
-      .populate({
-        path: "reviews",
-        select: "comment",
-        populate: {
-          path: "createdBy",
-          select: "name email profile ",
-        },
-      })
-      .populate("category", "name")
-      .populate("brand", "name");
 
-    if (!product) return next(new AppError(messages.product.notFound, 404));
+  const product = await ProductModel.findById(productId)
+    .populate({
+      path: "reviews",
+      select: "comment",
+      populate: {
+        path: "createdBy",
+        select: "name email profile ",
+      },
+    })
+    .populate("category", "name")
+    .populate("brand", "name");
 
-    return res.status(200).json({
-      message: messages.product.success,
-      product,
-      success: true,
-    });
-  } catch (error) {
-    next(error);
-  }
+  if (!product) return next(new AppError(messages.product.notFound, 404));
+
+  return res.status(200).json({
+    message: messages.product.success,
+    product,
+    success: true,
+  });
 };
 
 export { addProduct, deleteProduct, getProduct, getProducts, updateProduct };

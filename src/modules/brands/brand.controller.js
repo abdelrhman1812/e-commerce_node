@@ -125,8 +125,6 @@ export const getBrand = async (req, res, next) => {
 };
 
 /* ==========  Get Brand By Id ==========  */
-/* ==========  Get Brand By Id //// ==========  */
-/* ==========  Get Brand By Id //// ==========  */
 
 export const getBrands = async (req, res, next) => {
   const brands = await BrandModel.find({});

@@ -99,7 +99,7 @@ const getReviews = async (req, res, next) => {
   });
 };
 
-/* Get Reviews */
+/* ============== Get Review ============== */
 
 const getReview = async (req, res, next) => {
   const reviewId = req.params.id;

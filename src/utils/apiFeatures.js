@@ -9,7 +9,7 @@ class ApiFeatures {
     let pageNumber = this.searchQuery.page * 1 || 1;
     if (pageNumber < 1) pageNumber = 1;
 
-    const limit = 20;
+    const limit = 5;
     let skip = (pageNumber - 1) * limit;
     this.pageNumber = pageNumber;
 

@@ -28,6 +28,7 @@ const addProduct = async (req, res, next) => {
 
   // Check Brand If Exists
   const brandIsExist = await BrandModel.findById(brand);
+
   if (!brandIsExist) return next(new AppError(messages.brand.notFound, 404));
 
   // Check If Product Exists

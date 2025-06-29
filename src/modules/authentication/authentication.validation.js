@@ -27,8 +27,8 @@ const registerValidation = {
       .valid(Joi.ref("password"))
       .required()
       .messages(customMessages("confirm password")),
-    phone: Joi.number().required().messages(customMessages("phone number")),
-    address: Joi.string().required().messages(customMessages("address")),
+    phone: Joi.number().messages(customMessages("phone number")),
+    address: Joi.string().messages(customMessages("address")),
   }),
 };
 

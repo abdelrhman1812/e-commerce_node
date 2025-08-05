@@ -3,14 +3,10 @@
 This project was created during my training at the **Digital Egypt Pioneers Initiative (DEPI)**.  
 It’s a backend system for an online store built with **Node.js**, **Express**, and **MongoDB**.
 
-##  What the Project Does
-
 The backend handles everything for an e-commerce store:
 - Users can sign up, log in, update their info, and reset passwords.
 - Admins can manage all data in the system.
 - Users can browse products, add them to cart or wishlist, and order with cash.
-
-##  User Roles
 
 ### Admin can:
 - Add, update, delete, and view products, categories, subcategories, and brands.
@@ -50,11 +46,3 @@ The backend handles everything for an e-commerce store:
 - Nodemailer
 - Joi
 
-
-
-## 👨‍💻 About Me
-
-**Abdelrahman Ali**  
-React & Node.js Developer  
-This project was built as part of my training at DEPI.  
-GitHub: [abdelrhman1812](https://github.com/abdelrhman1812)
